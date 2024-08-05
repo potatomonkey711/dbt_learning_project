@@ -1,0 +1,27 @@
+klin-snowflake-db:
+  # target defines your environemnt variables. If you want to create another target (e.g. prod), you will also create a 'prod:' definition
+  # similar to the 'dev:' under 'outputs:'
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: KOLDDOJ.WX68104
+
+      # User/password auth
+      user: dbt_svc
+      password: Learningpass1@
+
+      role: SYSADMIN
+      database: ANALYTICS
+      warehouse: TRANSFORMING
+      schema: PUBLIC
+      threads: 1
+      client_session_keep_alive: False
+      query_tag: DEV_TRANSFORMER
+
+      # optional
+      connect_retries: 0 # default 0
+      connect_timeout: 10 # default: 10
+      retry_on_database_errors: False # default: false
+      retry_all: False  # default: false
+      reuse_connections: False
