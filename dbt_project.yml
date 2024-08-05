@@ -1,0 +1,7 @@
+profile: klin-snowflake-db
+
+name: 'jaffle_shop'
+
+models:
+  jaffle_shop:
+    +materialized: table
